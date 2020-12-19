@@ -1,0 +1,27 @@
+<%- include ('partials/_header') -%>
+<div class="container h-100">
+    <div class="row mt-5 mb-5 row justify-content-center h-100">
+        <div class="col-sm-8 align-self-center text-center">
+            <h3>Registro de Usuario</h3>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="address" placeholder="Dirección" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="Teléfono" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Resgistrarse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ('partials/_footer') -%>

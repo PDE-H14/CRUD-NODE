@@ -1,0 +1,24 @@
+CREATE DATABASE crudnode;
+USE crudnode;
+CREATE TABLE customer(
+    id_cus INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(50) UNIQUE NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    password VARCHAR(30) NOT NULL
+);
+CREATE TABLE songs(
+    id_son INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    song_name VARCHAR(50) NOT NULL,
+    author VARCHAR(50) NOT NULL
+);
+CREATE TABLE playlist(
+    id_pla INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_son INT(6) UNSIGNED NOT NULL,
+    id_cus INT(6) UNSIGNED NOT NULL,
+    playlist_name VARCHAR(50) NOT NULL,
+    CONSTRAINT fk1 FOREIGN KEY(id_son) REFERENCES songs (id_son),
+    CONSTRAINT fk2 FOREIGN KEY(id_cus) REFERENCES customer (id_cus)
+);
+
+SHOW TABLES;
